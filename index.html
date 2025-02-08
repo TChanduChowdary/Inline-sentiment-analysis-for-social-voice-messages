@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Speech Sentiment Analysis</h1>
+        <p>Click the button below to record your speech and analyze its sentiment:</p>
+
+        <!-- Button to start recording -->
+        <button id="recordBtn">Record Speech</button>
+        <button id="analyzeBtn" disabled>Analyze Emotion</button>
+
+        <!-- Section to display the recorded speech -->
+        <div id="speechOutput">
+            <h3>Recorded Speech:</h3>
+            <p id="speechText">No speech recorded yet.</p>
+        </div>
+
+        <!-- Section to display sentiment analysis -->
+        <div id="sentimentOutput" style="display: none;">
+            <h3>Sentiment Analysis Result:</h3>
+            <p id="sentimentText">Click "Analyze Emotion" to see the result.</p>
+        </div>
+
+        <!-- Emergency buttons displayed if the sentiment is negative -->
+        <div id="emergencyOptions" style="display: none;">
+            <h3>Emergency Services:</h3>
+            <button id="policeBtn">Call Police</button>
+            <button id="hospitalBtn">Call Hospital</button>
+            <button id="fireBtn">Call Fire Station</button>
+        </div>
+    </div>
+
+    <!-- Script files -->
+    <script src="{{ url_for('static', filename='demo.js') }}"></script>
+</body>
+</html>
